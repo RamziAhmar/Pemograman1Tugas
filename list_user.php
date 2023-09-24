@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>pemograman1.com</title>
+    <title>List User</title>
 </head>
 <body>
     <h2>Pemograman 1 2023</h2>
@@ -10,11 +10,11 @@
     <br>
     <table border="1">
         <tr>
+            <th>Id</th>
             <th>Nama</th>
             <th>Password</th>
             <th>Level</th>
             <th>Status</th>
-            <th>Opsi</th>
         </tr>
         <?php
             include 'koneksi.php';

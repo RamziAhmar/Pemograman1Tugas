@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pemograman3.com</title>
+    <title>Tambah User</title>
 </head>
 <?php
-//koneksi database
-include 'koneksi.php';
-//menangkap data yang dikirim dari form
-if(!empty($_POST['save'])){
+    //koneksi database
+    include 'koneksi.php';
+    //menangkap data yang dikirim dari form
+    if(!empty($_POST['save'])){
 
-    $Nama = $_POST['Nama'];
-    $Password = $_POST['Password'];
-    $Level = $_POST['Level'];
-    $Status = $_POST['Status'];
-//menginput data ke database
-    $a = mysqli_query($koneksi,"insert into user values('','$Nama','$Password','$Level','$Status')");
-    if($a){
-        //mengalihkan halaman kembali
-        header("location:tambah_user.php");
-    }else{
-        echo mysqli_error();
+        $Nama = $_POST['Nama'];
+        $Password = $_POST['Password'];
+        $Level = $_POST['Level'];
+        $Status = $_POST['Status'];
+        //menginput data ke database
+        $a = mysqli_query($koneksi,"insert into user values('','$Nama','$Password','$Level','$Status')");
+        if($a){
+            //mengalihkan halaman kembali
+            header("location:tambah_user.php");
+        }else{
+            echo mysqli_error();
+        }
     }
-}
 ?>
 
 <body>
     <h2>Pemograman 3 2023</h2>
     <br>
-    <a href="index.php">Kembali</a>
+    <a href="list_user.php">Kembali</a>
     <br><br>
     <h3>TAMBAH DATA USER</h3>
     <form method="POST">
