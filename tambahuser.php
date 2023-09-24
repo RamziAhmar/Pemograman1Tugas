@@ -29,8 +29,8 @@
             <td><?php echo $d['level'];?></td>
             <td><?php echo $d['status'];?></td>
             <td>
-                <a href="formuser.php?id=<?php echo $d['id'] ?>">Edit</a>
-                <a href="hapususer.php?id=<?php echo $d['id'] ?>">Hapus</a>
+                <a href="">Edit</a>
+                <a href="">Hapus</a>
             </td>
         </tr>
         <?php

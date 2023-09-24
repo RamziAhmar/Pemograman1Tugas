@@ -17,7 +17,7 @@ if(!empty($_POST['save'])){
     $a = mysqli_query($koneksi,"insert into user values('','$Nama','$Password','$Level','$Status')");
     if($a){
         //mengalihkan halaman kembali
-        header("location:tampil_user.php");
+        header("location:formuser.php");
     }else{
         echo mysqli_error();
     }
@@ -35,6 +35,10 @@ if(!empty($_POST['save'])){
             <tr>
                 <td>Nama</td>
                 <td><Input type="text" name="Nama"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="number" name="Password"></td>
             </tr>
             <tr>
                 <td>Level</td>
