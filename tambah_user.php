@@ -17,7 +17,7 @@ if(!empty($_POST['save'])){
     $a = mysqli_query($koneksi,"insert into user values('','$Nama','$Password','$Level','$Status')");
     if($a){
         //mengalihkan halaman kembali
-        header("location:formuser.php");
+        header("location:tambah_user.php");
     }else{
         echo mysqli_error();
     }

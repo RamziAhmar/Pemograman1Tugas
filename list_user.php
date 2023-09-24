@@ -6,7 +6,7 @@
 <body>
     <h2>Pemograman 1 2023</h2>
     <br>
-    <a href="formuser.php">+ Tambah User</a>
+    <a href="list_user.php">+ Tambah User</a>
     <br>
     <table border="1">
         <tr>
