@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>pemograman1.com</title>
 </head>
@@ -29,8 +29,8 @@
             <td><?php echo $d['level'];?></td>
             <td><?php echo $d['status'];?></td>
             <td>
-                <a href="">Edit</a>
-                <a href="">Hapus</a>
+                <a href="edit_user.php?id=<?php echo $d['id_user']; ?>">Edit</a>
+                <a href="hapus_user.php?id=<?php echo $d['id_user']; ?>">Hapus</a>
             </td>
         </tr>
         <?php
