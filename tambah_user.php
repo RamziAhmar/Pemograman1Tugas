@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="number" name="Password"></td>
+                <td><input type="password" name="Password"></td>
             </tr>
             <tr>
                 <td>Level</td>
