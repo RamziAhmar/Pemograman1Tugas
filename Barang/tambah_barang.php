@@ -5,10 +5,9 @@
 </head>
 <?php
     //Koneksi database
-    include 'koneksi.php';
+    include '../config/koneksi.php';
     //Menangkap data yang dikirim dari form 
-    if(!empty($_POST['save'])){
-
+    if(!empty($_POST['save'])){ //Jika ada kiriman dari 'save' maka jalankan :
         $Nama = $_POST['nama_barang'];
         $Kode = $_POST['kode_barang'];
         $Qty = $_POST['qty'];
@@ -17,7 +16,7 @@
         $a = mysqli_query($koneksi,"insert into barang values('','$Nama','$Kode','$Qty','$Kategori')");
         if($a){
             //mengalihkan halaman kembali
-            header("location:tambah_barang.php");
+            header("location:list_barang.php");
         }else{
             echo mysqli_error();
         }

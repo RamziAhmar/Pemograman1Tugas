@@ -5,7 +5,7 @@
 </head>
 <?php
     //koneksi database
-    include 'koneksi.php';
+    include '../config/koneksi.php';
     //menangkap data yang dikirim dari form
     if(!empty($_POST['save'])){
         
@@ -19,7 +19,7 @@
         $a = mysqli_query($koneksi,"insert into transaksi values('','$Tanggal','$No','$Jenis','$Barang','$Jumlah','$User')");
         if($a){
             //mengalihkan ke halaman kembali
-            header("location:tambah_transaksi.php");
+            header("location:list_transaksi.php");
         }else{
             echo mysqli_error();
         }

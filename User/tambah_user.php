@@ -5,7 +5,7 @@
 </head>
 <?php
     //koneksi database
-    include 'koneksi.php';
+    include '../config/koneksi.php';
     //menangkap data yang dikirim dari form
     if(!empty($_POST['save'])){
 
@@ -17,7 +17,7 @@
         $a = mysqli_query($koneksi,"insert into user values('','$Nama','$Password','$Level','$Status')");
         if($a){
             //mengalihkan halaman kembali
-            header("location:tambah_user.php");
+            header("location:list_user.php");
         }else{
             echo mysqli_error();
         }

@@ -5,7 +5,7 @@
 </head>
 <?php
     //Koneksi ke database
-    include 'koneksi.php';
+    include '../config/koneksi.php';
     //Menangkap data yang dikirim dari form
     if(!empty($_POST['save'])){
         $Nama = $_POST['nama_kategori'];
@@ -13,7 +13,7 @@
         $a = mysqli_query($koneksi,"insert into kategori values('','$Nama')");
         if($a){
             //mengalihkan ke halaman kembali
-            header("location:tambah_kategori.php");
+            header("location:list_kategori.php");
         }else{
             echo mysqli_error();
         }
