@@ -6,7 +6,7 @@
 <body>
     <h2>Pemograman 1 2023</h2>
     <br>
-    <a href="../Home.php">Home</a>
+    <a href="../Home.html">Home</a>
     <br>
     <a href="tambah_barang.php">+ Tambah Barang</a>
     <br>
