@@ -12,11 +12,13 @@
         $Tanggal = $_POST['tgl_transaksi'];
         $No = $_POST['no_transaksi'];
         $Jenis = $_POST['jenis_transaksi'];
+        $Penjualan = $_POST['penjualan_id'];
         $Barang = $_POST['barang_id'];
         $Jumlah = $_POST['jumlah_transaksi'];
-        $User = $_POST['user_id'];
+        $Member = $_POST['member_id'];
+        $Total = $_POST['total'];
         //menginput data ke database
-        $a = mysqli_query($koneksi,"insert into transaksi values('','$Tanggal','$No','$Jenis','$Barang','$Jumlah','$User')");
+        $a = mysqli_query($koneksi,"insert into transaksi values('','$Tanggal','$No','$Jenis','$Penjualan','$Barang','$Jumlah','$Member','$Total')");
         if($a){
             //mengalihkan ke halaman kembali
             header("location:list_transaksi.php");
@@ -46,6 +48,10 @@
                 <td><input type="text" name="jenis_transaksi"></td>
             </tr>
             <tr>
+                <td>Id Penjualan</td>
+                <td><input type="number" name="penjualan_id"></td>
+            </tr>
+            <tr>
                 <td>Id Barang</td>
                 <td><input type="number" name="barang_id"></td>
             </tr>
@@ -54,8 +60,12 @@
                 <td><input type="number" name="jumlah_transaksi"></td>
             </tr>
             <tr>
-                <td>Id User</td>
-                <td><input type="number" name="user_id"></td>
+                <td>Id Member</td>
+                <td><input type="number" name="member_id"></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td><input type="number" name="total"></td>
             </tr>
             <tr>
                 <td></td>
