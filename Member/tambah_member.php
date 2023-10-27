@@ -25,7 +25,7 @@
     <br>
     <a href="list_member.php">Kembali</a>
     <br><br>
-    <h3>TAMBAH DATA BARANG</h3>
+    <h3>TAMBAH DATA MEMBER</h3>
     <form method="POST">
         <table>
             <tr>
