@@ -27,7 +27,7 @@
     <br>
     <a href="list_penjualan.php">Kembali</a>
     <br>
-    <h3>TAMBAH DATA TRANSAKSI</h3>
+    <h3>TAMBAH DATA PENJUALAN</h3>
     <form method="POST">
         <table>
             <tr>
