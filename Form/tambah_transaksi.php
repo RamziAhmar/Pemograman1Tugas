@@ -5,7 +5,7 @@
 </head>
 <?php
     //koneksi database
-    include '../config/koneksi.php';
+    include 'config/koneksi.php';
     //menangkap data yang dikirim dari form
     if(!empty($_POST['save'])){
         
@@ -21,7 +21,7 @@
         $a = mysqli_query($koneksi,"insert into transaksi values('','$Tanggal','$No','$Jenis','$Penjualan','$Barang','$Jumlah','$Member','$Total')");
         if($a){
             //mengalihkan ke halaman kembali
-            header("location:list_transaksi.php");
+            header("location:?page=transaksi");
         }else{
             echo mysqli_error();
         }
@@ -30,7 +30,7 @@
 <body>
     <h2>Pemograman 1 2023</h2>
     <br>
-    <a href="list_transaksi.php">Kembali</a>
+    <a href="?page=transaksi">Kembali</a>
     <br>
     <h3>TAMBAH DATA TRANSAKSI</h3>
     <form method="POST">

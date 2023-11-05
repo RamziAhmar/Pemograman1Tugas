@@ -6,9 +6,7 @@
 <body>
     <h2>Pemograman 1 2023</h2>
     <br>
-    <a href="../Home.html">Home</a>
-    <br>
-    <a href="tambah_user.php">+ Tambah User</a>
+    <a href="?page=luser">+ Tambah User</a>
     <br>
     <table border="1">
         <tr>
@@ -19,7 +17,7 @@
             <th>Status</th>
         </tr>
         <?php
-            include '../config/koneksi.php';
+            include 'config/koneksi.php';
             $no = 1;
             $data = mysqli_query($koneksi,"select * from user");
             while($d = mysqli_fetch_array($data)){

@@ -6,9 +6,7 @@
 <body>
     <h2>Pemograman 1 2023</h2>
     <br>
-    <a href="../Home.html">Home</a>
-    <br>
-    <a href="tambah_barang.php">+ Tambah Barang</a>
+    <a href="?page=lbarang">+ Tambah Barang</a>
     <br>
     <table border="1">
         <tr>
@@ -19,7 +17,7 @@
             <th>Id Kategori</th>
         </tr>
         <?php
-            include '../Config/koneksi.php';
+            include 'Config/koneksi.php';
             $no = 1;
             $data = mysqli_query($koneksi,"Select * from barang");
             while($d = mysqli_fetch_array($data)){

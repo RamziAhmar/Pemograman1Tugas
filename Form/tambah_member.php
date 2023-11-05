@@ -5,7 +5,7 @@
 </head>
 <?php
     //Koneksi database
-    include '../config/koneksi.php';
+    include 'config/koneksi.php';
     //Menangkap data yang dikirim dari form 
     if(!empty($_POST['save'])){ //Jika ada kiriman dari 'save' maka jalankan :
         $Nama = $_POST['nama_member'];
@@ -14,7 +14,7 @@
         $a = mysqli_query($koneksi,"insert into member values('','$Nama','$level')");
         if($a){
             //mengalihkan halaman kembali
-            header("location:list_member.php");
+            header("location:?page=member");
         }else{
             echo mysqli_error();
         }
@@ -23,7 +23,7 @@
 <body>
     <h2>Pemograman 1 2023</h2>
     <br>
-    <a href="list_member.php">Kembali</a>
+    <a href="?page=member">Kembali</a>
     <br><br>
     <h3>TAMBAH DATA MEMBER</h3>
     <form method="POST">

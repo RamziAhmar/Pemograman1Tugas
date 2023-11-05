@@ -5,7 +5,7 @@
 </head>
 <?php
     //koneksi database
-    include '../config/koneksi.php';
+    include 'config/koneksi.php';
     //menangkap data yang dikirim dari form
     if(!empty($_POST['save'])){
 
@@ -17,7 +17,7 @@
         $a = mysqli_query($koneksi,"insert into user values('','$Nama','$Password','$Level','$Status')");
         if($a){
             //mengalihkan halaman kembali
-            header("location:list_user.php");
+            header("location:?page=user");
         }else{
             echo mysqli_error();
         }
@@ -27,7 +27,7 @@
 <body>
     <h2>Pemograman 3 2023</h2>
     <br>
-    <a href="list_user.php">Kembali</a>
+    <a href="?page=user">Kembali</a>
     <br><br>
     <h3>TAMBAH DATA USER</h3>
     <form method="POST">
