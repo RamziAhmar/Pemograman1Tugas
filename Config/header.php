@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>Keuangan</title>
     <style>
         ul {
   list-style-type: none;
