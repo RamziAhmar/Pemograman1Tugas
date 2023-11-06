@@ -33,7 +33,16 @@ li a:hover:not(.active) {
     </style>
 </head>
 <body>
-<ul>
+<?php
+    session_start();
+    if (isset($_SESSION['nama'])) {
+        echo "Selamat datang, " . $_SESSION['nama'] . "!";
+    } else {
+        header('location: login.html');
+    }
+    ?>
+    <a href="index.html">Logout</a>
+    <ul>
         <li><a class="active" href="?page=home">Home</a></li>
         <li><a href="?page=user">User</a></li>
         <li><a href="?page=barang">Barang</a></li>
@@ -43,5 +52,6 @@ li a:hover:not(.active) {
         <li><a href="?page=penjualan">Penjualan</a></li>
         <li><a href="?page=report">Report</a></li>
     </ul>
+    
 </body>
 </html>

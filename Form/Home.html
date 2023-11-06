@@ -1,36 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profil Saya</title>
+    <style>
+        .mantap {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.profile-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.profile-container img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.profile-container h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.profile-container p {
+    color: #777;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+}
+    </style>
 </head>
 <body>
-    <h1>BERANDA</h1>
-    <hr>
-    <table>
-        <tr>
-            <td><a href="list_user.php"><button>User</button></a></td>
-        </tr>
-        <tr>
-            <td><a href="list_barang.php"><button>Barang</button></a></td>
-        </tr>
-        <tr>
-            <td><a href="list_transaksi.php"><button>Transaksi</button></a></td>
-        </tr>
-        <tr>
-            <td><a href="list_kategori.php"><button>Kategori</button></a></td>
-        </tr>
-        <tr>
-            <td><a href="list_member.php"><button>Member</button></a></td>
-        </tr>
-        <tr>
-            <td><a href="list_penjualan.php"><button>Penjualan</button></a></td>
-        </tr>
-        <tr>
-            <td><a href="view_report.php"><button>Report</button></a></td>
-        </tr>
-    </table>
+    <div class="mantap">
+    <div class="profile-container" >
+        <img href="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-09/230913-kim-putin-mb-1001-ef7db6.jpg" alt="Foto Profil">
+        <h2>Ahmar Ramzi Sanjaya</h2>
+        <p>Pemograman 1</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/rrrmmzzz/">Instagram</a>
+            <a href="https://www.youtube.com/channel/UCCRitfXzoEjVkGPXBFYIrmQ">YouTube</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
