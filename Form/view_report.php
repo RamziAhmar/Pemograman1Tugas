@@ -1,5 +1,5 @@
 <?php
-    include 'config/koneksi.php';
+    include '../config/koneksi.php';
     $query = "SELECT
     m.nama_member AS Member,
     m.level AS Level,

@@ -21,7 +21,7 @@
             <th>Total</th>
         </tr>
         <?php
-            include 'config/koneksi.php';
+            include '../config/koneksi.php';
             $no = 1;
             $data = mysqli_query($koneksi,"Select * From transaksi");
             while($d = mysqli_fetch_array($data)){

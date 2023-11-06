@@ -17,7 +17,7 @@
         $a = mysqli_query($koneksi,"insert into user values('','$Nama','$Password','$Level','$Status')");
         if($a){
             //mengalihkan halaman kembali
-            header("location:?page=user");
+            header("location:../login.html");
         }else{
             echo mysqli_error();
         }
@@ -26,7 +26,7 @@
 
 <body>
     <br>
-    <a href="../index.html"><button>Kembali</button></a>
+    <a href="../login.html"><button>Kembali</button></a>
     <br><br>
     <h3>SIGN UP</h3>
     <form method="POST">

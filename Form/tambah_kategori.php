@@ -5,7 +5,7 @@
 </head>
 <?php
     //Koneksi ke database
-    include 'config/koneksi.php';
+    include '../config/koneksi.php';
     //Menangkap data yang dikirim dari form
     if(!empty($_POST['save'])){
         $Nama = $_POST['nama_kategori'];

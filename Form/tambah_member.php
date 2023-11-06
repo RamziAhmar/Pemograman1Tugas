@@ -5,7 +5,7 @@
 </head>
 <?php
     //Koneksi database
-    include 'config/koneksi.php';
+    include '../config/koneksi.php';
     //Menangkap data yang dikirim dari form 
     if(!empty($_POST['save'])){ //Jika ada kiriman dari 'save' maka jalankan :
         $Nama = $_POST['nama_member'];

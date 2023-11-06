@@ -5,7 +5,7 @@
 </head>
 <?php
     //koneksi database
-    include 'config/koneksi.php';
+    include '../config/koneksi.php';
     //menangkap data yang dikirim dari form
     if(!empty($_POST['save'])){
 

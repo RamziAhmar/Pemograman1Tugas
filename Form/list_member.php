@@ -15,7 +15,7 @@
             <th>Level</th>
         </tr>
         <?php
-                include 'Config/koneksi.php';
+                include '../Config/koneksi.php';
                 $no = 1;
                 $data = mysqli_query($koneksi,"select * from member");
                 while($d = mysqli_fetch_array($data)){

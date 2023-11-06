@@ -30,6 +30,12 @@ li a:hover:not(.active) {
 .active {
   background-color: #04AA6D;
 }
+
+.kembali{
+  display: flex;
+  justify-content: right;
+  /* align-items: right; */
+}
     </style>
 </head>
 <body>
@@ -41,7 +47,7 @@ li a:hover:not(.active) {
         header('location: login.html');
     }
     ?>
-    <a href="index.html">Logout</a>
+    <a href="../login.html" class="kembali">Logout</a>
     <ul>
         <li><a class="active" href="?page=home">Home</a></li>
         <li><a href="?page=user">User</a></li>

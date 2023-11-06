@@ -15,7 +15,7 @@
             <th>Diskon</th>
         </tr>
         <?php
-                include 'Config/koneksi.php';
+                include '../Config/koneksi.php';
                 $no = 1;
                 $data = mysqli_query($koneksi,"select * from kategori");
                 while($d = mysqli_fetch_array($data)){
