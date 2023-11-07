@@ -19,7 +19,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
         header('location: form.php?page=home'); // Redirect to the welcome page
     } else {
-        echo "<br>Gagal untuk login <br>Silahkan masukkan username dan password yang benar";
+        $_SESSION['error_message'] = "*Gagal Login. Username atau Password salah.";
+        header('location: ../index.php'); // Redirect back to the login page
     }
 }
 

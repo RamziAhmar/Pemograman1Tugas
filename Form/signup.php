@@ -26,7 +26,7 @@
 
 <body>
     <br>
-    <a href="../login.html"><button>Kembali</button></a>
+    <a href="../index.php"><button>Kembali</button></a>
     <br><br>
     <h3>SIGN UP</h3>
     <form method="POST">

@@ -1,6 +1,6 @@
 <?php
     if (!isset($_SESSION['nama'])) {
-        header('location: ../login.html'); // Redirect to the login page if not logged in
+        header('location: ../login.php'); // Redirect to the login page if not logged in
         exit(); }
 ?>
 <!DOCTYPE html>
