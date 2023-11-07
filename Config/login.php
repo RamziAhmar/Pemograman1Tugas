@@ -5,8 +5,9 @@ include('koneksi.php');
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $hashed_password = md5($password);
 
-    $query = "SELECT * FROM user WHERE nama='$username' AND password='$password'";
+    $query = "SELECT * FROM user WHERE nama='$username' AND password='$hashed_password'";
     $result = mysqli_query($koneksi, $query);
 
     if (mysqli_num_rows($result) == 1) {

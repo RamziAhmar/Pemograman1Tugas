@@ -1,7 +1,7 @@
 <?php
     include "header.php";
     if($_GET['page'] == 'home') {
-        include "../form/home.html";
+        include "../form/home.php";
     } elseif($_GET['page'] == 'barang') {
         include "../form/list_barang.php";
     } elseif($_GET['page'] == 'kategori') {
