@@ -44,10 +44,10 @@ li a:hover:not(.active) {
     if (isset($_SESSION['nama'])) {
         echo "Selamat datang, " . $_SESSION['nama'] . "!";
     } else {
-        header('location: login.html');
+        header('location: ../index.php');
     }
     ?>
-    <a href="../login.html" class="kembali">Logout</a>
+    <a href="logout.php" class="kembali">Logout</a>
     <ul>
         <li><a class="active" href="?page=home">Home</a></li>
         <li><a href="?page=user">User</a></li>

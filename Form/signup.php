@@ -17,7 +17,7 @@
         $a = mysqli_query($koneksi,"insert into user values('','$Nama','$Password','$Level','$Status')");
         if($a){
             //mengalihkan halaman kembali
-            header("location:../login.html");
+            header("location:../index.php");
         }else{
             echo mysqli_error();
         }

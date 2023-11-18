@@ -1,19 +1,20 @@
 <?php
     if (!isset($_SESSION['nama'])) {
-        header('location: ../login.html'); // Redirect to the login page if not logged in
+        header('location: ../index.php'); // Redirect to the login page if not logged in
         exit(); }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>List Member</title>
+    <link rel="stylesheet" href="../Config/table.css">
 </head>
 <body>
     <h2>Pemograman 1 2023</h2>
     <br>
     <a href="?page=lmember">+ Tambah Member</a>
     <br>
-    <table border="1">
+    <table border="1" class="styled-table">
         <tr>
             <th>Id</th>
             <th>Nama Member</th>

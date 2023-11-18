@@ -1,6 +1,6 @@
 <?php
     if (!isset($_SESSION['nama'])) {
-        header('location: ../login.html'); // Redirect to the login page if not logged in
+        header('location: ../index.php'); // Redirect to the login page if not logged in
         exit(); }
 ?>
 <?php
@@ -65,10 +65,11 @@ $result = $koneksi->query($query);
 <html>
 <head>
     <title>Hasil Transaksi</title>
+    <link rel="stylesheet" href="../Config/table.css">
 </head>
 <body>
     <h1>Hasil Transaksi</h1>
-    <table border="1">
+    <table border="1" class="styled-table">
         <tr>
             <th>Member</th>
             <th>Level</th>
