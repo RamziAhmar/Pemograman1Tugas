@@ -2,6 +2,15 @@
     if (!isset($_SESSION['nama'])) {
         header('location: ../index.php'); // Redirect to the login page if not logged in
         exit(); }
+        include '../config/koneksi.php';
+        $level = $_SESSION['level'];
+    $edit_hapus_visible = true;
+
+    if ($level == 4) {
+        // Jika pengguna memiliki level 4, opsi Edit dan Hapus tidak ditampilkan
+        $edit_hapus_visible = false;
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,10 +43,12 @@
             <td><?php echo $d['kode_barang'];?></td>
             <td><?php echo $d['qty'];?></td>
             <td><?php echo $d['kategori_id'];?></td>
+            <?php if ($edit_hapus_visible): ?>
             <td>
             <a href="edit_barang.php?id=<?php echo $d['id_barang']; ?>">Edit</a>
             <a href="hapus_barang.php?id=<?php echo $d['id_barang']; ?>">Hapus</a>                
             </td>
+            <?php endif; ?>
         </tr>
         <?php
             }

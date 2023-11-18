@@ -2,6 +2,14 @@
     if (!isset($_SESSION['nama'])) {
         header('location: ../index.php'); // Redirect to the login page if not logged in
         exit(); }
+        include '../config/koneksi.php';
+        $level = $_SESSION['level'];
+    $edit_hapus_visible = true;
+
+    if ($level == 4) {
+        // Jika pengguna memiliki level 4, opsi Edit dan Hapus tidak ditampilkan
+        $edit_hapus_visible = false;
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,10 +40,12 @@
             <td><?php echo $d['Tanggal_Penjualan'];?></td>
             <td><?php echo $d['Nama_Pelanggan'];?></td>
             <td><?php echo $d['Total_Harga'];?></td>
+            <?php if ($edit_hapus_visible): ?>
             <td>
                 <a href="edit_penjualan.php?id=<?php echo $d['ID_Penjualan']; ?>">Edit</a>
                 <a href="hapus_penjualan.php?id=<?php echo $d['ID_Penjualan']; ?>">Hapus</a>
             </td>
+            <?php endif; ?>
         </tr>
         <?php
             }

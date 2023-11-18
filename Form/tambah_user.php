@@ -50,9 +50,9 @@
                 <td><select name="Level" id="">
                     <option value="">-----Pilih</option>
                     <option value="1">Admin</option>
-                    <option value="2">Staff</option>
+                    <option value="2">Manager</option>
                     <option value="3">Supervisor</option>
-                    <option value="4">Manager</option>
+                    <option value="4">Staff</option>
                 </select>
             </td>
             </tr>
