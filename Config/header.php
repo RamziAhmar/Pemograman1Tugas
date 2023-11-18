@@ -40,13 +40,27 @@ li a:hover:not(.active) {
 </head>
 <body>
 <?php
-    session_start();
-    if (isset($_SESSION['nama'])) {
-        echo "Selamat datang, " . $_SESSION['nama'] . "!";
+session_start();
+if (isset($_SESSION['nama'])) {
+    echo "Selamat datang, " . $_SESSION['nama'] . "! <br>";
+    $level = $_SESSION['level'];
+
+    if ($level == 1) {
+        echo "Admin";
+    } elseif ($level == 2) {
+        echo "Manager";
+    } elseif ($level == 3) {
+        echo "Supervisor";
+    } elseif ($level == 4) {
+        echo "Staff";
     } else {
-        header('location: ../index.php');
+        // Level lainnya, sesuaikan pesan atau aksi yang diinginkan
+        echo "Level tidak valid";
     }
-    ?>
+} else {
+    header('location: ../index.php');
+}
+?>
     <a href="logout.php" class="kembali">Logout</a>
     <ul>
         <li><a class="active" href="?page=home">Home</a></li>
