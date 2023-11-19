@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2023 at 05:52 PM
+-- Generation Time: Nov 19, 2023 at 10:47 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -43,7 +43,8 @@ CREATE TABLE `barang` (
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `kode_barang`, `qty`, `harga`, `kategori_id`) VALUES
 (1, 'Laptop', '111', 9, '140000.00', 1),
 (2, 'Buku Tulis', '221', 8, '40000.00', 2),
-(3, 'Beras', '331', 90, '50000.00', 3);
+(3, 'Beras', '331', 90, '50000.00', 3),
+(4, 'AC', '1122', 5, '200000.00', 9);
 
 -- --------------------------------------------------------
 
@@ -64,7 +65,29 @@ CREATE TABLE `kategori` (
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `diskon`) VALUES
 (1, 'Elektronik', '0.10'),
 (2, 'ATK', '0.05'),
-(3, 'Sembako', '0.20');
+(3, 'Sembako', '0.20'),
+(7, 'Diamond', '20.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `level_member`
+--
+
+CREATE TABLE `level_member` (
+  `id_level` int(11) NOT NULL,
+  `nama_level` varchar(20) NOT NULL,
+  `diskon` decimal(4,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `level_member`
+--
+
+INSERT INTO `level_member` (`id_level`, `nama_level`, `diskon`) VALUES
+(1, 'Silver', '0.05'),
+(2, 'Gold', '0.10'),
+(3, 'Platinum', '0.15');
 
 -- --------------------------------------------------------
 
@@ -75,6 +98,7 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `diskon`) VALUES
 CREATE TABLE `member` (
   `id_member` int(11) NOT NULL,
   `nama_member` varchar(255) NOT NULL,
+  `level_id` int(11) NOT NULL,
   `level` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -82,11 +106,11 @@ CREATE TABLE `member` (
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`id_member`, `nama_member`, `level`) VALUES
-(1, 'Raysha', 'Gold'),
-(2, 'Reina', 'Silver'),
-(3, 'Nur Anisa', 'Platinum'),
-(4, 'Ahmar', 'Gold');
+INSERT INTO `member` (`id_member`, `nama_member`, `level_id`, `level`) VALUES
+(1, 'Raysha', 2, 'Gold'),
+(2, 'Reina', 1, 'Silver'),
+(3, 'Nur Anisa', 3, 'Platinum'),
+(4, 'Ahmar', 2, 'Gold');
 
 -- --------------------------------------------------------
 
@@ -109,7 +133,8 @@ INSERT INTO `penjualan` (`ID_Penjualan`, `Tanggal_Penjualan`, `Nama_Pelanggan`, 
 (1, '2023-10-01', 'Raysha', '50000.00'),
 (2, '2023-10-02', 'Reina', '140000.00'),
 (3, '2023-10-03', 'Nur Anisa', '0.00'),
-(4, '2023-10-26', 'Ahmar', '40000.00');
+(4, '2023-10-26', 'Ahmar', '40000.00'),
+(6, '2023-10-02', 'Ahmar', '280000.00');
 
 -- --------------------------------------------------------
 
@@ -134,6 +159,7 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `tgl_transaksi`, `no_transaksi`, `jenis_transaksi`, `penjualan_id`, `barang_id`, `jumlah_transaksi`, `member_id`, `total`) VALUES
+(4, '2023-10-29', '4', 'Cash', 4, 2, 1, 4, 40000),
 (9, '2023-10-26', '1', 'Cash', 1, 3, 1, 1, 50000),
 (10, '2023-10-26', '2', 'Cash', 2, 1, 1, 2, 140000),
 (11, '2023-10-26', '3', 'Cash', 3, 0, 0, 3, 0);
@@ -147,8 +173,8 @@ INSERT INTO `transaksi` (`id_transaksi`, `tgl_transaksi`, `no_transaksi`, `jenis
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `nama` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `level` int(11) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `level` varchar(11) NOT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -157,8 +183,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `password`, `level`, `status`) VALUES
-(8, 'Ahmar Ramzi Sanjaya', '22222', 1, 1),
-(9, 'ujang', '88888', 2, 0);
+(1, 'ahmar', 'b59c67bf196a4758191e42f76670ceba', '1', 1),
+(2, 'ujang', '934b535800b1cba8f96a5d72f72f1611', '2', 1),
+(3, 'Budi', '2be9bd7a3434f7038ca27d1918de58bd', '3', 1),
+(4, 'Iwan', 'dbc4d84bfcfe2284ba11beffb853a8c4', '4', 1);
 
 --
 -- Indexes for dumped tables
@@ -176,6 +204,12 @@ ALTER TABLE `barang`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
+
+--
+-- Indexes for table `level_member`
+--
+ALTER TABLE `level_member`
+  ADD PRIMARY KEY (`id_level`);
 
 --
 -- Indexes for table `member`
@@ -211,13 +245,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `level_member`
+--
+ALTER TABLE `level_member`
+  MODIFY `id_level` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `member`
@@ -229,7 +269,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `ID_Penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_Penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
@@ -241,7 +281,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
