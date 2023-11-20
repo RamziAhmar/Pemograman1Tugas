@@ -15,7 +15,7 @@
     if(!empty($_POST['save'])){
 
         $Nama = $_POST['Nama'];
-        $Password = $_POST['Password'];
+        $Password = md5($_POST['Password']);
         $Level = $_POST['Level'];
         $Status = $_POST['Status'];
         //menginput data ke database
